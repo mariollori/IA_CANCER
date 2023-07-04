@@ -1,4 +1,12 @@
 <input type="file" (change)="handleFileInput($event)" accept=".xlsx">
-
-
-
+<br>
+<span>Se han obtenido {{valor}} datos</span>
+<br>
+<br>
+<app-input-text [placeholder]="'Ingrese un numero ha predecir'" [borderColor]="'border-white'"
+  [icon]="'fa-solid fa-id-card-clip'" [iconColor]="'text-blue-500'"></app-input-text>
+<input type="text" [(ngModel)]="option">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="obteneValor()">
+  Predecir valor
+</button>
+<span>Se ha predecido que tiene cancer porque salio: {{pronostico}}</span>

@@ -5,13 +5,15 @@ import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-pronostico',
   templateUrl: './pronostico.component.html',
-  styleUrls: ['./pronostico.component.css']
+  styleUrls: ['./pronostico.component.css'],
 })
 export class PronosticoComponent {
-
-  data :any ;
-  pronostico:any;
-  constructor(private service:PronosticoService){}
+  option!: string;
+  valor = 0;
+  data: any;
+  dataValor: any;
+  pronostico: any;
+  constructor(private service: PronosticoService) {}
 
   handleFileInput(event: any) {
     const file = event.target.files[0];
@@ -23,19 +25,23 @@ export class PronosticoComponent {
       const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
       console.log(jsonData);
-      this.data = jsonData[3]
-      console.log(this.data);
-      this.predecir();
-    
+      this.valor = jsonData.length;
+      this.data = jsonData;
     };
     fileReader.readAsArrayBuffer(file);
   }
 
+  predecir() {
+    this.service.postPronostico(this.dataValor).subscribe((data) => {
+      const { prediction } = data;
+      console.log(prediction);
+      this.pronostico = prediction;
+    });
+  }
 
-  predecir(){
-    this.service.postPronostico(this.data).subscribe(data=>{
-      console.log(data)
-      this.pronostico = data;
-    })
+  obteneValor() {
+    console.log(this.option);
+    this.dataValor = this.data[this.option];
+    this.predecir();
   }
 }
