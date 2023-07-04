@@ -1,8 +1,14 @@
 /* Estilos generales */
+*{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
 :host {
   display: block;
+  
 }
-
+body{
+  overflow: hidden;
+}
 h1, h2, h3 {
   color: #333;
 }

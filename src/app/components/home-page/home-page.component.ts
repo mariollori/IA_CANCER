@@ -8,9 +8,9 @@ import Swiper from 'swiper';
 })
 export class HomePageComponent implements OnInit {
   images: string[] = [
-    'https://www.kurir.rs/data/images/2022/11/02/22/3234266_10-result_ff.jpg',
-    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=-1&s=1',
-    'https://www.kurir.rs/data/images/2022/11/02/22/3234266_10-result_ff.jpg'
+    'https://www.institutoncologicofalp.cl/wp-content/uploads/2022/08/mama-principa-landing-4.png',
+    'https://nuestralucha.pe/hubfs/%5BOncosalud%20Campa%C3%B1a%20C%C3%A1ncer%20de%20Mama%5D%20Landing%20Banner%20Home%20AF_1%20desktoop-2.png',
+    'https://www.institutoncologicofalp.cl/wp-content/uploads/2022/08/mama-principa-landing-4.png'
   ];
   currentIndex = 0;
 
