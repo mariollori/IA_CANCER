@@ -1,6 +1,6 @@
 <input type="file" (change)="handleFileInput($event)" accept=".xlsx">
 <br>
-<span>Se han obtenido {{valor}} datos</span>
+<span class="text-3xl">Se han obtenido {{valor}} datos</span>
 <br>
 <br>
 <div class="pl-2 pr-2 pb-2">
@@ -18,21 +18,36 @@
     </label>
   </div>
 </div>
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="obtenerPrediccion()">
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-3" (click)="obtenerPrediccion()">
   Predecir valor
 </button>
-<span>Se ha predecido que tiene cancer porque salio: {{pronostico}}</span>
 
-<form class="w-[50%] grid grid-cols-1 gap-[2.5rem] p-4 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
-  <div class="container relative" *ngFor="let x of datitaxd; let i = index">
-    <input type="text" value="{{x}}"
-      class="w-full h-[55px] border-1 rounded-[15px] {{ borderColor }} pl-12 pr-2 py-2 placeholder-transparent items-center shadow-md"
-      [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()" disabled>
-    <div class="absolute inset-y-0 left-2 flex items-center pl-2">
-      <i class="fas fa-solid fa-arrow-up-1-9 text-blue-500"></i>
+<div class="w-full grid grid-cols-2 gap-[2.5rem] p-4 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
+
+    <form class="w-full grid grid-cols-1 gap-[2.5rem] p-4 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
+      <div class="container relative" *ngFor="let x of datitaxd; let i = index">
+        <input type="text" value="{{x}}"
+          class="w-full h-[55px] border-1 rounded-[15px] {{ borderColor }} pl-12 pr-2 py-2 placeholder-transparent items-center shadow-md"
+          [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()" disabled>
+        <div class="absolute inset-y-0 left-2 flex items-center pl-2">
+          <i class="fas fa-solid fa-arrow-up-1-9 text-blue-500"></i>
+        </div>
+        <label class="absolute top-[0.85rem] left-12 text-gray-400 transition-all duration-300 cursor-text"
+          [class.active]="isPlaceholderActive" (click)="activateInput()">{{my_array[i]}}
+        </label>
+      </div>
+    </form>
+    <div class="w-full  bg-white rounded-md flex justify-center items-center">
+        <label for="" *ngIf="pronostico != 1 && pronostico !=0">Esperando sus datos para predecir</label>
+        <div  *ngIf="pronostico == 1">
+            <label for="">Terrible tienes cancer.</label>
+            <img src="https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2016/04/29/160429134919_cancer_624x351_thinkstock_nocredit.jpg"  alt="">
+        </div>
+        <div  *ngIf="pronostico == 0">
+            <label for="">Terrible tienes cancer.</label>
+            <img src="../../../assets/SmartSelect_20230704_173534_Gallery.gif"  alt="">
+        </div>
+     
+
     </div>
-    <label class="absolute top-[0.85rem] left-12 text-gray-400 transition-all duration-300 cursor-text"
-      [class.active]="isPlaceholderActive" (click)="activateInput()">{{my_array[i]}}
-    </label>
-  </div>
-</form>
+</div>
