@@ -8,4 +8,5 @@ body {
   background-image: url("https://img.freepik.com/vector-premium/fondo-blanco-circuito-tecnologia-azul_583398-369.jpg?w=2000");
 
   overflow-y: hidden;
+  overflow: scroll;
 }

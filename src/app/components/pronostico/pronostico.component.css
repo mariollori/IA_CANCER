@@ -1,0 +1,35 @@
+.relative {
+  position: relative;
+}
+
+input:focus + div > label, input:not(:placeholder-shown) + div > label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  background-color: white;
+  padding: 0 5px;
+}
+
+div > label.active {
+  top: -8px;
+  left: 30px;
+  font-size: 12px;
+  background-color: white;
+  padding: 0 5px;
+}
+
+i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  position: relative;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

@@ -1,4 +1,11 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-input-text',
@@ -6,6 +13,10 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
   styleUrls: ['./input-text.component.css'],
 })
 export class InputTextComponent {
+  @Output() valorEncontrado = new EventEmitter<any>();
+
+  optionValor: number = 0;
+
   @Input() placeholder!: string;
   @Input() borderColor!: string;
   @Input() icon!: string;
@@ -37,4 +48,5 @@ export class InputTextComponent {
       inputElement.focus();
     }
   }
+
 }

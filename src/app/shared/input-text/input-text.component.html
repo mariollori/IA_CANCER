@@ -1,14 +1,14 @@
 <div class="pl-2 pr-2 pb-2">
   <div class="h-[6px] w-full"></div>
   <div class="container relative">
-    <input type="text"
+    <input type="text" [(ngModel)]="optionValor"
       class="w-full h-[55px] border-1 rounded-[15px] {{ borderColor }} pl-12 pr-2 py-2 placeholder-transparent items-center shadow-md"
-      [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()" [id]="inputId">
+      [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()">
     <div class="absolute inset-y-0 left-2 flex items-center pl-2">
       <i class="fas {{ icon }} {{iconColor}}"></i>
     </div>
     <label class="absolute top-[0.85rem] left-12 text-gray-400 transition-all duration-300 cursor-text"
-      [class.active]="isPlaceholderActive" [for]="inputId" (click)="activateInput()">
+      [class.active]="isPlaceholderActive" (click)="activateInput()">
       {{ placeholder }}
     </label>
   </div>

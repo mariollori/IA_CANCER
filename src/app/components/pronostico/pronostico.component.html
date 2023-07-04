@@ -3,10 +3,35 @@
 <span>Se han obtenido {{valor}} datos</span>
 <br>
 <br>
-<app-input-text [placeholder]="'Ingrese un numero ha predecir'" [borderColor]="'border-white'"
-  [icon]="'fa-solid fa-id-card-clip'" [iconColor]="'text-blue-500'"></app-input-text>
-<input type="text" [(ngModel)]="option">
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="obteneValor()">
+<div class="pl-2 pr-2 pb-2">
+  <div class="h-[6px] w-full"></div>
+  <div class="container relative">
+    <input type="text" [(ngModel)]="option"
+      class="w-full h-[55px] border-1 rounded-[15px] {{ borderColor }} pl-12 pr-2 py-2 placeholder-transparent items-center shadow-md"
+      [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()">
+    <div class="absolute inset-y-0 left-2 flex items-center pl-2">
+      <i class="fas fa-solid fa-arrow-up-1-9 text-blue-500"></i>
+    </div>
+    <label class="absolute top-[0.85rem] left-12 text-gray-400 transition-all duration-300 cursor-text"
+      [class.active]="isPlaceholderActive" (click)="activateInput()">
+      {{ placeholder }}
+    </label>
+  </div>
+</div>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="obtenerPrediccion()">
   Predecir valor
 </button>
 <span>Se ha predecido que tiene cancer porque salio: {{pronostico}}</span>
+
+<div class="container relative" *ngFor="let x of datitaxd; let i = index">
+  <input type="text" value="{{x}}"
+    class="w-full h-[55px] border-1 rounded-[15px] {{ borderColor }} pl-12 pr-2 py-2 placeholder-transparent items-center shadow-md"
+    [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()" disabled>
+  <div class="absolute inset-y-0 left-2 flex items-center pl-2">
+    <i class="fas fa-solid fa-arrow-up-1-9 text-blue-500"></i>
+  </div>
+  <label class="absolute top-[0.85rem] left-12 text-gray-400 transition-all duration-300 cursor-text"
+    [class.active]="isPlaceholderActive" (click)="activateInput()">{{my_array[i]}}
+  </label>
+
+</div>
