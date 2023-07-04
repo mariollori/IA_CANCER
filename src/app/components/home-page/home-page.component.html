@@ -1,0 +1,64 @@
+<header>
+  <div class="hero">
+    <div class="slider">
+      <div class="slide" *ngFor="let image of images; let i = index" [class.active]="currentIndex === i">
+        <img [src]="image" alt="Slide {{ i }}">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2 style="text-align: center;">Cáncer de mama</h2>
+    <div class="row" style="width: 100%;">
+      <div class="container-chiqui">
+        <div class="col">
+          <img
+            src="https://oncologiamultidisciplinaria.com/wp-content/uploads/2022/08/cancer-mama-kShF-1248x698@abc.jpeg"
+            alt="Imagen 1">
+          <div class="text">
+            <h3>Prevención</h3>
+          </div>
+          <div class="text-text">
+            <p>Conoce las medidas preventivas que puedes tomar para reducir el riesgo de desarrollar cáncer de mama.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-chiqui">
+        <div class="col">
+          <img
+            src="https://oncologiamultidisciplinaria.com/wp-content/uploads/2022/08/cancer-mama-kShF-1248x698@abc.jpeg"
+            alt="Imagen 1">
+          <div class="text">
+            <h3>Prevención</h3>
+          </div>
+          <div class="text-text">
+            <p>Conoce las medidas preventivas que puedes tomar para reducir el riesgo de desarrollar cáncer de mama.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-chiqui">
+        <div class="col">
+          <img
+            src="https://oncologiamultidisciplinaria.com/wp-content/uploads/2022/08/cancer-mama-kShF-1248x698@abc.jpeg"
+            alt="Imagen 2">
+          <div class="text">
+            <h3>Detección temprana o Predicción</h3>
+          </div>
+          <div class="text-text">
+            <p>Infórmate sobre la importancia de la detección temprana del cáncer de mama y cómo puedes hacerlo.</p>
+          </div>
+          <div class="text">
+            <a href="/pronostico-de-cancer" class="btn">Realizar Pronóstico</a>
+          </div>
+          <div style="height: 20px; width: 20px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 Página de inicio - Cáncer de mama - Digital Dream Team</p>
+</footer>
