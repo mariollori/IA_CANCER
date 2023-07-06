@@ -9,7 +9,7 @@ import * as XLSX from 'xlsx';
 })
 export class PronosticoComponent {
   datitaxd = [0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-  @Input() placeholder: string = "Ingresa un valor";
+  @Input() placeholder: string = "Ingresa un numero de la fila";
   @Input() borderColor!: string;
   @Input() icon!: string;
   @Input() iconColor!: string;

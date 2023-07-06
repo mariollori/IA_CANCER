@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PronosticoService {
-  url = 'http://mariollori.pythonanywhere.com/';
+  url = 'https://mariollori.pythonanywhere.com/';
   constructor(private http:HttpClient) { }
 
   postPronostico(data:any):Observable<any>{
